@@ -1,0 +1,26 @@
+{
+    "name": "soql",
+    "displayName": "soql",
+    "description": "Salesforce SOQL Syntax",
+    "version": "0.0.1",
+    "publisher": "RaffaeleFioratto",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "soql",
+            "aliases": ["SOQL", "soql"],
+            "extensions": [".soql"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "soql",
+            "scopeName": "source.soql",
+            "path": "./syntaxes/soql.tmLanguage.json"
+        }]
+    }
+}

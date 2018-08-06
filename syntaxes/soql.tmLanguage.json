@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SOQL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+					"name": "keyword.other.soql",
+					"match": "(?i:\\b(select|from|where|group\\sby|rollup|cube|or|like|and|having|order\\sby|limit|not|offset|for\\s(view|reference|update)+|nulls\\s?(first|last)?|update\\s(tracking|viewstat)+|with\\s?(data\\scategory)?|using\\sscope)\\b)"
+				},
+				{
+					"match": "(?i)\\b(DESC|ASC)\\b",
+					"name": "keyword.other.order.soql"
+				},
+				{
+					"match": "(?i)\\b(YESTERDAY|TODAY|TOMORROW|LAST_WEEK|THIS_WEEK|NEXT_WEEK|LAST_MONTH|THIS_MONTH|NEXT_MONTH|LAST_90_DAYS|NEXT_90_DAYS|LAST_N_DAYS:(\\d)+|NEXT_N_DAYS:(\\d)+|NEXT_N_WEEKS:(\\d)+|LAST_N_WEEKS:(\\d)+|NEXT_N_MONTHS:(\\d)+|LAST_N_MONTHS:(\\d)+|THIS_QUARTER|NEXT_QUARTER|NEXT_N_QUARTERS:(\\d)+|LAST_N_QUARTERS:(\\d)+|THIS_YEAR|LAST_YEAR|NEXT_YEAR|NEXT_N_YEARS:(\\d)+|LAST_N_YEARS:(\\d)+|THIS_FISCAL_QUARTER|LAST_FISCAL_QUARTER|NEXT_FISCAL_QUARTER|NEXT_N_FISCAL_QUARTERS:(\\d)+|LAST_N_FISCAL_QUARTERS:(\\d)+|THIS_FISCAL_YEAR|LAST_FISCAL_YEAR|NEXT_FISCAL_YEAR|NEXT_N_FISCAL_YEARS:(\\d)+|LAST_N_FISCAL_YEARS:(\\d)+)\\b",
+					"name": "keyword.other.date.soql"
+				},
+				{
+					"match": "(?i)\\b(=|!=|<=|>=|<|>|LIKE|IN|INCLUDES|EXCLUDES)\\b",
+					"name": "keyword.operator.comparison.soql"
+				},
+				{
+					"match": "(?i)\\b(avg|count|count_distinct|max|min|sum)\\b",
+					"name": "support.function.aggregate.soql"
+				},
+				{
+					"match": "(?i)\\b(calendar_month|calendar_quarter|calendar_year|day_in_month|day_in_week|day_in_year|day_only|fiscal_month|fiscal_quarter|fiscal_year|hour_in_day|week_in_month|week_in_year)\\b",
+					"name": "support.function.datetime.soql"
+				},
+				{
+					"match": "(?i)\\b(toLabel|format|convertcurrency)\\b",
+					"name": "support.function.multilocale.soql"
+				}]
+		},
+		"strings": {
+			"name": "string.quoted.single.soql",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					
+				}
+			]
+		}
+	},
+	"scopeName": "source.soql"
+}
